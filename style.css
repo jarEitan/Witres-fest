@@ -1,0 +1,15 @@
+main{
+    width: 100%;
+}
+h1, h2, p
+{
+    color: rgb(184, 138, 138);
+}
+.separador
+{
+    margin-top: 6%;
+}
+.floater
+{
+    float: left;
+}
