@@ -276,6 +276,40 @@ select:focus-visible {
     margin-bottom: 0;
 }
 
+/* MANIFIESTO */
+.fraseManifiesto {
+    font-size: clamp(2.75rem, 1.5rem + 5vw, 6rem);
+    line-height: 1.1;
+}
+
+.fraseManifiesto span {
+    display: block;
+}
+
+.fraseManifiesto em {
+    font-style: normal;
+    color: var(--rojo);
+}
+
+.fraseManifiesto .lineaTorcida {
+    display: inline-block;
+    margin-top: .75rem;
+    rotate: -3deg;
+}
+
+.historiaFest {
+    font-size: 1.15rem;
+    color: var(--huesoSuave);
+    margin-bottom: .25rem;
+}
+
+.firmaWitres {
+    font-family: "Permanent Marker", cursive;
+    font-size: 2rem;
+    color: var(--rojo);
+    rotate: -4deg;
+}
+
 /* BANDAS */
 .fotoBanda {
     height: 180px;
