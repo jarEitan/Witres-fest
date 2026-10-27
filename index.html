@@ -1,48 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="es" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
-    <title>WITRES fest</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>WITRES FEST</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar md:navbar-expand bg-1">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="/docs/6.0/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
-                        class="d-inline-block align-text-top">
+        <nav class="navbar md:navbar-expand">
+            <div class="container">
+                <a class="navbar-brand" href="#inicio">
+                    <img src="imagenes/logoWitres.png" alt="" width="36" height="36" class="rounded-circle object-fit-cover">
                     WITRES FEST
                 </a>
                 <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer"
                     data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    aria-label="Abrir menú">
                     <span class="navbar-toggler-icon" aria-hidden="true"></span>
                 </button>
                 <dialog class="drawer drawer-end" tabindex="-1" id="navbarDrawer" aria-labelledby="navbarDrawerLabel">
                     <div class="drawer-header">
-                        <h5 class="drawer-title" id="navbarDrawerLabel">Menu</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+                        <h5 class="drawer-title" id="navbarDrawerLabel">Menú</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Cerrar"></button>
                     </div>
-                    <div class="drawer-body mb-2 md:mb-0">
-                        <ul class="nav navbar-nav me-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="entradas.html">Entradas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Bandas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Cerveza</a>
-                            </li>
+                    <div class="drawer-body">
+                        <ul class="navbar-nav md:ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#bandas">Bandas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#entradas">Entradas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#cerveza">Cerveza</a></li>
                         </ul>
                     </div>
                 </dialog>
@@ -52,35 +47,48 @@
 
     <main>
 
-        <section class="separador">
-            <div class="container text-center">
+        <!-- PRESENTACION -->
+        <section id="inicio" class="separador">
+            <div class="container">
                 <div class="row g-3 align-items-stretch">
-                    <div class="col-8">
-                        <div class="card h-100" style="min-height: 420px;">
-                            <div class="card-body">
-                                <h2>WITRES FEST</h2>
-                                <p>PUNK ROCK AL FALLO GATO</p>
+                    <div class="md:col-8">
+                        <div class="card h-100 tarjetaPresentacion">
+                            <img class="logoFlotante" src="imagenes/logoWitres.png" alt="Logo de Witres">
+                            <div class="card-body d-flex flex-column justify-content-end">
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="chip"><i class="bi bi-calendar-event"></i> Sáb 12 de diciembre</span>
+                                    <span class="chip"><i class="bi bi-geo-alt"></i> Estadio Obras</span>
+                                </div>
+                                <h1 class="tituloGraffiti">WITRES FEST</h1>
+                                <p class="text-lg">Cinco bandas, un escenario y ningún jefe. Del Londres del 77 al
+                                    conurbano de hoy: una noche entera de punk para gritar todo lo que te callaste
+                                    este año.</p>
+                                <div class="d-flex flex-wrap align-items-center gap-4 mt-2">
+                                    <a href="#entradas" class="boton botonPulso">Comprar entrada</a>
+                                    <span class="textoSuave">Desde $40.000</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-4 d-flex flex-column gap-3">
-                        <div class="card h-100" style="min-height: 120px;">
+                    <div class="md:col-4 d-flex flex-column gap-3">
+                        <div class="card h-100 tarjetaRazon">
                             <div class="card-body">
-                                <h2>Razon 1 festival god </h2>
-                                <p>hola1</p>
+                                <h2>Sin VIP</h2>
+                                <p>Nadie paga para estar más cerca que vos. Todos al mismo campo, todos al mismo pogo.</p>
                             </div>
                         </div>
-                        <div class="card h-100" style="min-height: 120px;">
+                        <div class="card h-100 tarjetaRazon">
                             <div class="card-body">
-                                <h2>Razon 2 festival god </h2>
-                                <p>hola2</p>
+                                <h2>50 años de punk</h2>
+                                <p>Sex Pistols, Green Day, 2 Minutos, Flema y Witres. Tres generaciones en una
+                                    misma noche.</p>
                             </div>
                         </div>
-                        <div class="card h-100" style="min-height: 120px;">
+                        <div class="card h-100 tarjetaRazon">
                             <div class="card-body">
-                                <h2>Razon 3 festival god </h2>
-                                <p>hola3</p>
+                                <h2>Birra del barrio</h2>
+                                <p>La barra es de Gavilán Bar: cerveza artesanal, nada de marcas grandes.</p>
                             </div>
                         </div>
                     </div>
@@ -88,30 +96,56 @@
             </div>
         </section>
 
-        <section class="separador">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col">
-                        <div class="card">
+        <!-- BANDAS -->
+        <section id="bandas" class="separador">
+            <div class="container">
+                <h2 class="tituloSeccion">Line-up</h2>
+                <div class="row g-3 align-items-stretch">
+                    <div class="md:col-4 d-flex flex-column gap-3">
+                        <div class="card h-100 tarjetaBanda">
+                            <img src="imagenes/greenDay.jpg" class="card-img-top fotoBanda object-fit-cover" alt="Green Day en vivo">
                             <div class="card-body">
-                                <h2>Reseña 1 god</h2>
-                                <p>hola1</p>
+                                <h3>Green Day</h3>
+                                <p>California, 1987. Vienen a tocar Dookie de punta a punta.</p>
+                            </div>
+                        </div>
+                        <div class="card h-100 tarjetaBanda">
+                            <img src="imagenes/sexPistols.jpg" class="card-img-top fotoBanda object-fit-cover" alt="Sex Pistols en vivo">
+                            <div class="card-body">
+                                <h3>Sex Pistols</h3>
+                                <p>Londres, 1975. Los que empezaron todo.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h2>Reseña 2 god</h2>
-                                <p>hola2</p>
+
+                    <div class="md:col-8">
+                        <div class="card h-100 tarjetaWitres">
+                            <img src="imagenes/witres.jpg" class="fotoWitres object-fit-cover" alt="Witres en vivo">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <h3>Witres</h3>
+                                <p>La banda que le pone nombre al fest. Tres acordes, cero permiso y el set más
+                                    largo de la noche.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
+                </div>
+
+                <div class="row g-3 mt-0">
+                    <div class="md:col-6">
+                        <div class="card h-100 tarjetaBanda">
+                            <img src="imagenes/dosMinutos.jpg" class="card-img-top fotoBanda object-fit-cover" alt="2 Minutos en vivo">
                             <div class="card-body">
-                                <h2>Reseña 3 god</h2>
-                                <p>hola3</p>
+                                <h3>2 Minutos</h3>
+                                <p>Valentín Alsina, 1987. Punk de barrio, de esquina y de cancha.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-6">
+                        <div class="card h-100 tarjetaBanda">
+                            <img src="imagenes/flema.jpg" class="card-img-top fotoBanda object-fit-cover" alt="Flema en vivo">
+                            <div class="card-body">
+                                <h3>Flema</h3>
+                                <p>Avellaneda, 1985. Los himnos que se gritan con el puño arriba.</p>
                             </div>
                         </div>
                     </div>
@@ -119,46 +153,176 @@
             </div>
         </section>
 
-        
+        <!-- ENTRADAS -->
+        <section id="entradas" class="separador">
+            <div class="container">
+                <h2 class="tituloSeccion">Entradas</h2>
+                <p class="textoSuave mb-4"><i class="bi bi-calendar-event"></i> Sábado 12 de diciembre de 2026 ·
+                    <i class="bi bi-clock"></i> Puertas 16 h · <i class="bi bi-geo-alt"></i> Estadio Obras, Av. del
+                    Libertador 7395, CABA</p>
+                <div class="row g-3 align-items-start">
+                    <div class="md:col-4">
+                        <div class="card tarjetaEntrada">
+                            <div class="card-body">
+                                <h3>Platea</h3>
+                                <p class="precioEntrada">$40.000</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-lg"></i> Asiento numerado</li>
+                                    <li><i class="bi bi-check-lg"></i> El pogo visto desde arriba</li>
+                                    <li><i class="bi bi-check-lg"></i> Entrada desde las 17 h</li>
+                                </ul>
+                            </div>
+                            <div class="accordion">
+                                <details class="accordion-item" name="compraEntrada">
+                                    <summary class="accordion-header">
+                                        Comprar Platea
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">
+                                        <form action="#entradas">
+                                            <label for="cantidadPlatea" class="form-label">Cantidad</label>
+                                            <input type="number" id="cantidadPlatea" class="form-control mb-3" min="1" max="6" value="1" required>
+                                            <label for="emailPlatea" class="form-label">Email</label>
+                                            <input type="email" id="emailPlatea" class="form-control mb-4" placeholder="vos@mail.com" required>
+                                            <button type="submit" class="boton w-100">Pagar</button>
+                                        </form>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
 
-        <section class="separador">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2>ENTRADA 1</h2>
-                                    <p>99U$</p>
-                                </div>
+                    <div class="md:col-4">
+                        <div class="card tarjetaEntrada entradaDestacada">
+                            <div class="card-body">
+                                <span class="badge theme-primary">La más vendida</span>
+                                <h3>Campo Pogo</h3>
+                                <p class="precioEntrada">$55.000</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-lg"></i> Adelante de todo</li>
+                                    <li><i class="bi bi-check-lg"></i> Entrada desde las 16 h</li>
+                                    <li><i class="bi bi-check-lg"></i> Guardarropa incluido</li>
+                                </ul>
+                            </div>
+                            <div class="accordion">
+                                <details class="accordion-item" name="compraEntrada">
+                                    <summary class="accordion-header">
+                                        Comprar Campo Pogo
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">
+                                        <form action="#entradas">
+                                            <label for="cantidadCampo" class="form-label">Cantidad</label>
+                                            <input type="number" id="cantidadCampo" class="form-control mb-3" min="1" max="6" value="1" required>
+                                            <label for="emailCampo" class="form-label">Email</label>
+                                            <input type="email" id="emailCampo" class="form-control mb-4" placeholder="vos@mail.com" required>
+                                            <button type="submit" class="boton w-100">Pagar</button>
+                                        </form>
+                                    </div>
+                                </details>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2>ENTRADA 2</h2>
-                                    <p>999U$</p>
-                                </div>
+                    </div>
+
+                    <div class="md:col-4">
+                        <div class="card tarjetaEntrada">
+                            <div class="card-body">
+                                <h3>Combo Anarquía</h3>
+                                <p class="precioEntrada">$75.000</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-lg"></i> Campo Pogo</li>
+                                    <li><i class="bi bi-check-lg"></i> Remera oficial del fest</li>
+                                    <li><i class="bi bi-check-lg"></i> 2 pintas de Gavilán Bar</li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2>ENTRADA 3</h2>
-                                    <p>9999U$</p>
-                                </div>
+                            <div class="accordion">
+                                <details class="accordion-item" name="compraEntrada">
+                                    <summary class="accordion-header">
+                                        Comprar Combo Anarquía
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">
+                                        <form action="#entradas">
+                                            <label for="cantidadCombo" class="form-label">Cantidad</label>
+                                            <input type="number" id="cantidadCombo" class="form-control mb-3" min="1" max="6" value="1" required>
+                                            <label for="talleCombo" class="form-label">Talle de remera</label>
+                                            <select id="talleCombo" class="form-control form-control-caret mb-3">
+                                                <option>S</option>
+                                                <option selected>M</option>
+                                                <option>L</option>
+                                                <option>XL</option>
+                                            </select>
+                                            <label for="emailCombo" class="form-label">Email</label>
+                                            <input type="email" id="emailCombo" class="form-control mb-4" placeholder="vos@mail.com" required>
+                                            <button type="submit" class="boton w-100">Pagar</button>
+                                        </form>
+                                    </div>
+                                </details>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <!-- CERVEZA -->
+        <section id="cerveza" class="separador">
+            <div class="container">
+                <div class="card tarjetaPatrocinador">
+                    <div class="row g-0">
+                        <div class="md:col-4">
+                            <img src="imagenes/gavilanBar.jpg" class="fotoPatrocinador object-fit-cover" alt="Barra de Gavilán Bar">
+                        </div>
+                        <div class="md:col-8">
+                            <div class="card-body">
+                                <h2>La birra la pone Gavilán Bar</h2>
+                                <p>Patrocinador oficial del fest. Cerveza artesanal hecha a dos cuadras de la sala de
+                                    ensayo: su IPA y su Stout van a estar en todas las barras del Obras, y las pintas
+                                    del Combo Anarquía salen de sus canillas.</p>
+                                <a href="https://www.instagram.com/" class="boton align-self-start mt-2">Seguí a Gavilán Bar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-
+    <footer class="separador">
+        <div class="container">
+            <div class="row g-4">
+                <div class="md:col-5 d-flex gap-3">
+                    <div class="simboloAnarquia" aria-hidden="true">A</div>
+                    <div>
+                        <h2>WITRES FEST</h2>
+                        <p class="textoSuave mb-0">Punk sin jefes. Sábado 12 de diciembre, Estadio Obras.</p>
+                    </div>
+                </div>
+                <div class="md:col-3">
+                    <h3>Navegación</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#bandas">Bandas</a></li>
+                        <li><a href="#entradas">Entradas</a></li>
+                        <li><a href="#cerveza">Cerveza</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-4">
+                    <h3>Contacto</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:hola@witresfest.com"><i class="bi bi-envelope"></i> hola@witresfest.com</a></li>
+                        <li><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i> @witresfest</a></li>
+                        <li><i class="bi bi-geo-alt"></i> Av. del Libertador 7395, CABA</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="textoSuave text-sm text-center">© 2026 Witres Fest · Hecho por Eitan y Francisco</p>
+        </div>
     </footer>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
 </body>
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
-    crossorigin="anonymous"></script>
 
 </html>

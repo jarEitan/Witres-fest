@@ -1,15 +1,509 @@
-main{
+:root {
+    --negro: #111;
+    --carbon: #1a1918;
+    --borde: #2e2b28;
+    --rojo: #d7261e;
+    --rojoOscuro: #8f1611;
+    --hueso: #f2ede4;
+    --huesoSuave: #b8b0a3;
+
+    --bs-bg-body: var(--negro);
+    --bs-fg-body: var(--hueso);
+    --bs-border-color: var(--borde);
+    --bs-primary-base: var(--rojo);
+    --bs-primary-bg: var(--rojo);
+    --bs-primary-fg: var(--rojo);
+    --bs-primary-border: var(--rojo);
+    --bs-primary-focus-ring: rgba(215, 38, 30, .5);
+    --bs-primary-contrast: #fff;
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    background-color: var(--negro);
+    border-bottom: 1px solid var(--borde);
+}
+
+.navbar-brand {
+    font-family: "Anton", sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: .04em;
+}
+
+/* GENERALES */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--negro);
+    color: var(--hueso);
+}
+
+main {
     width: 100%;
 }
-h1, h2, p
-{
-    color: rgb(184, 138, 138);
+
+section,
+footer {
+    scroll-margin-top: 5rem;
 }
+
+h1, h2, h3
+{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    color: var(--hueso);
+}
+
+p {
+    color: var(--hueso);
+}
+
+::selection {
+    background-color: var(--rojo);
+    color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--rojo);
+    outline-offset: 2px;
+}
+
 .separador
 {
     margin-top: 6%;
 }
-.floater
-{
-    float: left;
+
+.textoSuave {
+    color: var(--huesoSuave);
+}
+
+.tituloSeccion {
+    font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    --bs-card-bg: var(--carbon);
+    overflow: hidden;
+}
+
+.boton {
+    position: relative;
+    border: none;
+    background: var(--rojo);
+    padding: 14px 26px;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    transition: transform 0.3s cubic-bezier(0, 0, 0.58, 1), background 0.3s cubic-bezier(0, 0, 0.58, 1);
+    font-family: "Anton", sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.boton:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--rojoOscuro);
+    border-radius: inherit;
+    transform: translate3d(0, 0.4em, -1em);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.58, 1);
+}
+
+.boton:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    filter: blur(4px);
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+    transform: translate3d(0, .6em, -1em);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.58, 1);
+}
+
+.boton:hover {
+    background: #c41f18;
+    color: #fff;
+    transform: translateY(0.1em);
+}
+
+.boton:active {
+    transform: translate(0, 0.4em);
+}
+
+.boton:active:before,
+.boton:active:after {
+    transform: translate3d(0, 0, -1em);
+}
+
+/* PRESENTACION */
+.tarjetaPresentacion {
+    position: relative;
+    min-height: 480px;
+    border: none;
+    background-image: linear-gradient(to top, rgba(17, 17, 17, .95) 25%, rgba(17, 17, 17, .45)), url("imagenes/publico.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.tarjetaPresentacion .card-body {
+    padding: 2.5rem;
+}
+
+.tarjetaPresentacion .chip {
+    background-color: rgba(17, 17, 17, .7);
+    border: 1px solid var(--borde);
+    color: var(--hueso);
+}
+
+.tarjetaPresentacion p {
+    max-width: 52ch;
+}
+
+.logoFlotante {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation-name: flotar;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes flotar {
+    from {
+        translate: 0 0;
+        rotate: -4deg;
+    }
+    to {
+        translate: 0 -12px;
+        rotate: 4deg;
+    }
+}
+
+.tituloGraffiti {
+    align-self: flex-start;
+    font-family: "Permanent Marker", cursive;
+    font-size: clamp(3.5rem, 2rem + 6vw, 6rem);
+    line-height: 1;
+    text-transform: none;
+    color: var(--rojo);
+}
+
+.tituloGraffiti:hover {
+    animation-name: sacudida;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
+}
+
+@keyframes sacudida {
+    20% {
+        translate: -6px 2px;
+        rotate: -2deg;
+    }
+    40% {
+        translate: 5px -3px;
+        rotate: 1.5deg;
+    }
+    60% {
+        translate: -4px 1px;
+        rotate: -1deg;
+    }
+    80% {
+        translate: 3px -1px;
+        rotate: .5deg;
+    }
+}
+
+.botonPulso {
+    animation-name: pulso;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes pulso {
+    from {
+        scale: 100%;
+    }
+    to {
+        scale: 106%;
+    }
+}
+
+.tarjetaRazon h2 {
+    font-size: 1.6rem;
+    color: var(--rojo);
+}
+
+.tarjetaRazon p {
+    color: var(--huesoSuave);
+    margin-bottom: 0;
+}
+
+/* BANDAS */
+.fotoBanda {
+    height: 180px;
+    background-color: var(--borde);
+}
+
+.tarjetaBanda h3 {
+    font-size: 1.8rem;
+    margin-bottom: .25rem;
+}
+
+.tarjetaBanda p {
+    color: var(--huesoSuave);
+    margin-bottom: 0;
+}
+
+.tarjetaWitres {
+    position: relative;
+    min-height: 420px;
+    border-color: var(--rojo);
+}
+
+.fotoWitres {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--borde);
+}
+
+.tarjetaWitres .card-img-overlay {
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(17, 17, 17, .95) 10%, transparent 65%);
+}
+
+.tarjetaWitres h3 {
+    font-size: clamp(3rem, 2rem + 4vw, 5.5rem);
+    line-height: 1;
+    color: var(--rojo);
+}
+
+.tarjetaWitres p {
+    max-width: 45ch;
+    margin-bottom: 0;
+}
+
+/* ENTRADAS */
+.tarjetaEntrada h3 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.precioEntrada {
+    font-family: "Anton", sans-serif;
+    font-size: 2.75rem;
+    line-height: 1;
+    margin: .5rem 0 1.25rem;
+}
+
+.tarjetaEntrada li {
+    color: var(--huesoSuave);
+    margin-bottom: .4rem;
+}
+
+.tarjetaEntrada li i {
+    color: var(--rojo);
+}
+
+.tarjetaEntrada .accordion {
+    --bs-accordion-border-radius: 0;
+    --bs-accordion-border-width: 0;
+    --bs-accordion-bg: var(--carbon);
+    --bs-accordion-btn-bg: var(--rojo);
+    --bs-accordion-btn-color: #fff;
+    --bs-accordion-active-bg: var(--rojoOscuro);
+    --bs-accordion-active-color: #fff;
+}
+
+.tarjetaEntrada .accordion-header {
+    justify-content: space-between;
+    font-family: "Anton", sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.entradaDestacada {
+    border-color: var(--rojo);
+}
+
+.entradaDestacada .badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+}
+
+/* CERVEZA */
+.tarjetaPatrocinador {
+    background: radial-gradient(circle at 100% 0%, rgba(215, 38, 30, .2), transparent 55%), var(--carbon);
+}
+
+.tarjetaPatrocinador .card-body {
+    padding: 2.5rem;
+}
+
+.tarjetaPatrocinador h2 {
+    font-size: clamp(2.25rem, 1.5rem + 2.5vw, 3.5rem);
+    line-height: 1.05;
+}
+
+.tarjetaPatrocinador p {
+    max-width: 60ch;
+}
+
+.fotoPatrocinador {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    background-color: var(--borde);
+}
+
+/* FOOTER */
+footer {
+    padding: 3rem 0 1.5rem;
+    background-color: #0b0b0b;
+    border-top: 1px solid var(--borde);
+}
+
+footer h2 {
+    font-size: 2rem;
+    margin-bottom: .25rem;
+}
+
+footer h3 {
+    font-size: 1rem;
+    letter-spacing: .08em;
+    color: var(--huesoSuave);
+}
+
+footer li {
+    color: var(--huesoSuave);
+    margin-bottom: .5rem;
+}
+
+footer a {
+    color: var(--hueso);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer hr {
+    border-color: var(--borde);
+    opacity: 1;
+    margin: 2rem 0 1rem;
+}
+
+.simboloAnarquia {
+    flex: 0 0 auto;
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border: 4px solid var(--rojo);
+    border-radius: 50%;
+    font-family: "Anton", sans-serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--rojo);
+    animation-name: girar;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes girar {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+@media (max-width: 767px) {
+    .separador {
+        margin-top: 3.5rem;
+    }
+
+    .tarjetaPresentacion {
+        min-height: 540px;
+    }
+
+    .tarjetaPresentacion .card-body,
+    .tarjetaPatrocinador .card-body {
+        padding: 1.5rem;
+    }
+
+    .logoFlotante {
+        top: 1rem;
+        right: 1rem;
+        width: 90px;
+        height: 90px;
+    }
+
+    .tarjetaWitres {
+        min-height: 360px;
+    }
+
+    .fotoPatrocinador {
+        min-height: 200px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .logoFlotante,
+    .botonPulso,
+    .tituloGraffiti:hover,
+    .simboloAnarquia {
+        animation: none;
+    }
 }
